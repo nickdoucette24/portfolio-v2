@@ -1,26 +1,43 @@
+"use client";
+
 import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { ThemeToggle } from "@/components/ui/ThemeToggle";
 
 export function SiteHeader() {
   return (
-    <header className="border-b border-slate-800 bg-slate-950/90">
-      <div className="mx-auto flex max-w-5xl items-center justify-between px-4 py-4">
-        <Link href="/" className="text-sm font-semibold text-slate-50">
-          ND<span className="text-emerald-400">.</span>
+    <header className="sticky top-0 z-20 border-b bg-background/80 backdrop-blur">
+      <div className="mx-auto flex max-w-5xl items-center justify-between gap-4 px-4 py-3">
+        {/* Left: logo / name */}
+        <Link
+          href="#home"
+          className="text-sm font-semibold tracking-tight text-foreground hover:text-primary"
+        >
+          nickdoucette<span className="text-primary">.</span>
         </Link>
-        <nav className="flex gap-4 text-xs text-slate-300">
-          <Link href="#projects" className="hover:text-emerald-300">
-            Projects
+
+        {/* Center: nav */}
+        <nav className="hidden gap-6 text-xs font-medium text-muted-foreground md:flex">
+          <Link href="#home" className="hover:text-primary">
+            Home
           </Link>
-          <Link href="#experience" className="hover:text-emerald-300">
-            Experience
+          <Link href="#projects" className="hover:text-primary">
+            Work
           </Link>
-          <Link href="#skills" className="hover:text-emerald-300">
-            Skills
-          </Link>
-          <Link href="#contact" className="hover:text-emerald-300">
-            Contact
+          <Link href="#about" className="hover:text-primary">
+            About
           </Link>
         </nav>
+
+        {/* Right: Contact + theme */}
+        <div className="flex items-center gap-3">
+          <Link href="#contact" className="hidden md:inline-block">
+            <Button size="sm" className="rounded-full">
+              Contact Me
+            </Button>
+          </Link>
+          <ThemeToggle />
+        </div>
       </div>
     </header>
   );
