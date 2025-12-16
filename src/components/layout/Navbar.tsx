@@ -7,7 +7,7 @@ import { ChevronRight } from "lucide-react";
 
 export function Navbar() {
   return (
-    <nav className="p-4 flex items-center justify-between h-16">
+    <nav className="p-4 flex items-center justify-between h-16 border-b border-border">
       <SidebarTrigger className="hover:cursor-pointer" />
       <div>contactMeButton</div>
       {/* <div className="mx-auto flex max-w-5xl items-center gap-4 px-4 py-3">

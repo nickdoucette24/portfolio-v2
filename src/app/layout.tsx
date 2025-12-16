@@ -97,7 +97,7 @@ export default async function RootLayout({
             className="flex justify-between"
             defaultOpen={defaultOpen}
           >
-            <div className="flex flex-row w-full">
+            <div className="flex w-full">
               <AppSidebar />
               <main className="flex-1 min-h-screen flex flex-col">
                 <Navbar />

@@ -4,10 +4,9 @@ import {
   Home,
   Briefcase,
   Info,
-  MessageCircle,
+  Mail,
   Moon,
   Sun,
-  CodeXml,
   ChevronUp,
 } from "lucide-react";
 
@@ -17,12 +16,10 @@ import {
   SidebarFooter,
   SidebarGroup,
   SidebarGroupContent,
-  SidebarGroupLabel,
   SidebarHeader,
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
-  SidebarSeparator,
 } from "@/components/ui/sidebar";
 import Link from "next/link";
 import { useTheme } from "next-themes";
@@ -53,7 +50,7 @@ const items = [
   {
     title: "Contact",
     url: "/#contact",
-    icon: MessageCircle,
+    icon: Mail,
   },
 ];
 
@@ -63,9 +60,9 @@ export function AppSidebar() {
   return (
     <Sidebar
       collapsible="icon"
-      className="relative h-screen shrink-0 border-r-sidebar"
+      className="relative h-screen shrink-0 border-r-transparent"
     >
-      <SidebarHeader className="py-4">
+      <SidebarHeader className="py-4 bg-sidebar">
         <SidebarMenu>
           <SidebarMenuItem>
             <SidebarMenuButton asChild>
@@ -78,7 +75,6 @@ export function AppSidebar() {
       </SidebarHeader>
       <SidebarContent>
         <SidebarGroup>
-          <SidebarGroupLabel>Main Menu</SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu>
               {items.map((item) => (
@@ -99,9 +95,9 @@ export function AppSidebar() {
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <SidebarMenuButton className="hover:cursor-pointer">
-              <span className="relative inline-flex h-[1.2rem] w-[1.2rem] items-center">
-                <Sun className="h-[1.2rem] w-[1.2rem] transition-all duration-200 dark:hidden" />
-                <Moon className="h-[1.2rem] w-[1.2rem] transition-all duration-200 hidden dark:block" />
+              <span className="relative inline-flex h-5 w-5 items-center">
+                <Sun className="h-5 w-5 dark:hidden" />
+                <Moon className="h-5 w-5 hidden dark:block" />
               </span>
 
               <span className="text-md">Theme</span>
@@ -109,16 +105,19 @@ export function AppSidebar() {
               <ChevronUp className="ml-auto" />
             </SidebarMenuButton>
           </DropdownMenuTrigger>
-          <DropdownMenuContent align="end" className="">
+          <DropdownMenuContent
+            align="end"
+            className="bg-sidebar border-sidebar-border p-1.5"
+          >
             <DropdownMenuItem
               onClick={() => setTheme("light")}
-              className="hover:cursor-pointer hover:bg-(--hover-option)"
+              className="hover:cursor-pointer hover:bg-sidebar-accent"
             >
               Light
             </DropdownMenuItem>
             <DropdownMenuItem
               onClick={() => setTheme("dark")}
-              className="hover:cursor-pointer hover:bg-(--hover-option)"
+              className="hover:cursor-pointer hover:bg-sidebar-accent"
             >
               Dark
             </DropdownMenuItem>
