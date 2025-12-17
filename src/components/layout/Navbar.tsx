@@ -9,17 +9,15 @@ export function Navbar() {
   return (
     <nav className="p-4 flex items-center justify-between h-16 border-b border-border">
       <SidebarTrigger className="hover:cursor-pointer" />
-      <div>contactMeButton</div>
-      {/* <div className="mx-auto flex max-w-5xl items-center gap-4 px-4 py-3">
-        <SidebarTrigger className="absolute" />
-        <div className="flex items-center gap-3">
-          <Link href="#contact" className="hidden md:inline-block">
-            <Button size="sm" className="rounded-full relative">
-              Contact Me
-            </Button>
-          </Link>
-        </div>
-      </div> */}
+      <Link href="#contact" className="hidden md:inline-block">
+        <Button
+          variant="outline"
+          size="sm"
+          className="rounded-md border-none relative hover:cursor-pointer hover:bg-sidebar-primary hover:text-sidebar-primary-foreground transition-colors duration-150"
+        >
+          Contact Me
+        </Button>
+      </Link>
     </nav>
   );
 }

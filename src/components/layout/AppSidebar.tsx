@@ -60,9 +60,9 @@ export function AppSidebar() {
   return (
     <Sidebar
       collapsible="icon"
-      className="relative h-screen shrink-0 border-r-transparent"
+      className="rounded-br-lg relative h-screen shrink-0 border-none"
     >
-      <SidebarHeader className="py-4 bg-sidebar">
+      <SidebarHeader className="py-4 bg-sidebar-primary-header text-sidebar dark:text-sidebar-foreground rounded-tr-lg">
         <SidebarMenu>
           <SidebarMenuItem>
             <SidebarMenuButton asChild>
@@ -96,8 +96,8 @@ export function AppSidebar() {
           <DropdownMenuTrigger asChild>
             <SidebarMenuButton className="hover:cursor-pointer">
               <span className="relative inline-flex h-5 w-5 items-center">
-                <Sun className="h-5 w-5 dark:hidden" />
-                <Moon className="h-5 w-5 hidden dark:block" />
+                <Sun className="h-4 w-4 dark:hidden" />
+                <Moon className="h-4 w-4 hidden dark:block" />
               </span>
 
               <span className="text-md">Theme</span>
