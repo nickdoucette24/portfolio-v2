@@ -1,7 +1,11 @@
 import type { Metadata } from "next";
+import { cookies } from "next/headers";
 import "./globals.css";
-import { SiteHeader } from "../components/layout/SiteHeader";
-import { SiteFooter } from "../components/layout/SiteFooter";
+import { Navbar } from "@/components/layout/Navbar";
+// import { SiteFooter } from "../components/layout/SiteFooter";
+import { ThemeProvider } from "../components/providers/ThemeProvider";
+import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
+import { AppSidebar } from "@/components/layout/AppSidebar";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://nickdoucette.dev"),
@@ -72,19 +76,36 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const cookieStore = await cookies();
+  const defaultOpen = cookieStore.get("sidebar_state")?.value === "true";
+
   return (
-    <html lang="en">
-      <body className="min-h-screen bg-background text-foreground">
-        <div className="flex min-h-screen flex-col">
-          <SiteHeader />
-          <main className="flex-1">{children}</main>
-          <SiteFooter />
-        </div>
+    <html lang="en" suppressHydrationWarning>
+      <body className="flex min-h-screen bg-background text-foreground">
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <SidebarProvider
+            className="flex justify-between"
+            defaultOpen={defaultOpen}
+          >
+            <div className="flex w-full">
+              <AppSidebar />
+              <main className="flex-1 min-h-screen flex flex-col">
+                <Navbar />
+                <div className="px-4">{children}</div>
+              </main>
+            </div>
+          </SidebarProvider>
+        </ThemeProvider>
       </body>
     </html>
   );
