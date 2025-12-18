@@ -22,13 +22,7 @@ export function Navbar() {
           <span className="mr-1">Open to Work</span>
         </Badge>
         <Link href="#contact" className="hidden md:inline-block">
-          <Button
-            variant="outline"
-            size="sm"
-            className="text-[0.75rem] rounded-md border-none relative hover:cursor-pointer hover:bg-sidebar-primary hover:text-sidebar-primary-foreground transition-colors duration-150"
-          >
-            Contact Me
-          </Button>
+          <Button>Contact Me</Button>
         </Link>
       </div>
     </nav>
