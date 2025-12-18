@@ -25,7 +25,7 @@ export function Navbar() {
           <Button
             variant="outline"
             size="sm"
-            className="rounded-md border-none relative hover:cursor-pointer hover:bg-sidebar-primary hover:text-sidebar-primary-foreground transition-colors duration-150"
+            className="text-[0.75rem] rounded-md border-none relative hover:cursor-pointer hover:bg-sidebar-primary hover:text-sidebar-primary-foreground transition-colors duration-150"
           >
             Contact Me
           </Button>

@@ -2,10 +2,10 @@ import type { Metadata } from "next";
 import { cookies } from "next/headers";
 import "./globals.css";
 import { Navbar } from "@/components/layout/Navbar";
-// import { SiteFooter } from "../components/layout/SiteFooter";
 import { ThemeProvider } from "../components/providers/ThemeProvider";
 import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
 import { AppSidebar } from "@/components/layout/AppSidebar";
+import { Manrope } from "next/font/google";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://nickdoucette.dev"),
@@ -76,6 +76,11 @@ export const metadata: Metadata = {
   },
 };
 
+const manrope = Manrope({
+  subsets: ["latin"],
+  display: "swap",
+});
+
 export default async function RootLayout({
   children,
 }: {
@@ -85,7 +90,11 @@ export default async function RootLayout({
   const defaultOpen = cookieStore.get("sidebar_state")?.value === "true";
 
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html
+      lang="en"
+      className={`${manrope.className} tracking-wide font-light`}
+      suppressHydrationWarning
+    >
       <body className="flex min-h-screen bg-background text-foreground">
         <ThemeProvider
           attribute="class"

@@ -67,7 +67,7 @@ export function AppSidebar() {
           <SidebarMenuItem>
             <SidebarMenuButton asChild>
               <Link href="/#home">
-                <span className="text-xl">nickdoucette.</span>
+                <span className="text-xl tracking-normal">nickdoucette.</span>
               </Link>
             </SidebarMenuButton>
           </SidebarMenuItem>
@@ -82,7 +82,7 @@ export function AppSidebar() {
                   <SidebarMenuButton asChild>
                     <Link href={item.url}>
                       <item.icon />
-                      <span>{item.title}</span>
+                      <span className="ml-1.5">{item.title}</span>
                     </Link>
                   </SidebarMenuButton>
                 </SidebarMenuItem>
@@ -100,7 +100,7 @@ export function AppSidebar() {
                 <Moon className="h-4 w-4 hidden dark:block" />
               </span>
 
-              <span className="text-md">Theme</span>
+              <span>Theme</span>
               <span className="sr-only">Toggle theme</span>
               <ChevronUp className="ml-auto" />
             </SidebarMenuButton>
