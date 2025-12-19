@@ -4,7 +4,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { SidebarTrigger } from "../ui/sidebar";
 import { Badge } from "@/components/ui/badge";
-import { Circle, CircleSmall } from "lucide-react";
+import { CircleSmall } from "lucide-react";
 
 export function Navbar() {
   return (
@@ -13,7 +13,7 @@ export function Navbar() {
       <div className="flex gap-4 items-center">
         <Badge
           variant="outline"
-          className="border-2 h-7.5 px-2 border-navbar-badge text-background dark:text-navbar-badge bg-navbar-badge shadow-0 dark:bg-sidebar hover:cursor-default rounded-full"
+          className="hidden sm:flex border-2 h-7.5 px-2 border-navbar-badge text-background dark:text-navbar-badge bg-navbar-badge shadow-0 dark:bg-sidebar hover:cursor-default rounded-full"
         >
           <CircleSmall
             fill="lightgreen"
@@ -21,7 +21,7 @@ export function Navbar() {
           />
           <span className="mr-1">Open to Work</span>
         </Badge>
-        <Link href="#contact" className="hidden md:inline-block">
+        <Link href="#contact">
           <Button>Contact Me</Button>
         </Link>
       </div>

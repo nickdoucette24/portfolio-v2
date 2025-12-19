@@ -3,7 +3,7 @@ import { cookies } from "next/headers";
 import "./globals.css";
 import { Navbar } from "@/components/layout/Navbar";
 import { ThemeProvider } from "../components/providers/ThemeProvider";
-import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
+import { SidebarProvider } from "@/components/ui/sidebar";
 import { AppSidebar } from "@/components/layout/AppSidebar";
 import { Manrope } from "next/font/google";
 
@@ -18,6 +18,7 @@ export const metadata: Metadata = {
 
   keywords: [
     "Nick Doucette",
+    "Nicholas Doucette",
     "Software Engineer",
     "Full Stack Developer",
     "React Developer",
